@@ -20,21 +20,16 @@ public class Client {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "lastname")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "type_room")
-    private String typeRoom;
+    @Column(name = "mail")
+    private String mail;
 
-    @Column(name = "number_people")
-    private Long numberPeople;
+    @Column(name = "phone_number")
+    private Long phone_number;
 
-    @Column(name = "entry_date")
-    private Long entryDate;
 
-    @Column(name = "departure_date")
-    private Long departureDate;
 
-    @Column(name = "price")
-    private Long price;
+
 }

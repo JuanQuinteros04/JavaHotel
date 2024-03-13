@@ -9,25 +9,21 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "rooms")
-public class Room {
-
+public class UserPreferences {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long id;
+
+    @Column(name = "user_id")
+    private Long userId;
 
     @Column(name = "type_room")
     private String typeRoom;
 
-    @Column(name = "room_capacity")
-    private Long roomCapacity;
-
-    @Column(name = "available_room")
-    private Boolean availableRoom;
+    @Column(name = "number_people")
+    private Long numberPeople;
 
     @Column(name = "price")
-    private Double price;
-
+    private Long price;
 
 }
