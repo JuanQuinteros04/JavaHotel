@@ -27,7 +27,7 @@ public class Client {
     private String mail;
 
     @Column(name = "phone_number")
-    private Long phone_number;
+    private Long phoneNumber;
 
 
 

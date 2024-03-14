@@ -15,7 +15,7 @@ public class ClientDTO {
 
     private String mail;
 
-    private Long phone_number;
+    private Long phoneNumber;
 
 
 }
