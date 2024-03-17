@@ -31,14 +31,14 @@ public class UserPreferenceServiceImpl implements UserPreferencesService{
     }
 
     @Override
-    public UserPreferenceResponse createUserPreference(UserPreferencesDTO userPreferencesDTO) {
+    public UserPreferenceResponse createUserPreferences(UserPreferencesDTO userPreferencesDTO) {
         UserPreferences userPreferences = userPreferencesMapper.userPreferencesDTOToUserPreferences(userPreferencesDTO);
         userPreferencesRepository.save(userPreferences);
         return userPreferencesMapper.userPreferencesToUserPreferencesResponse(userPreferences);
     }
 
     @Override
-    public void updateUserPreference(Long id, UserPreferencesDTO userPreferencesDTO) {
+    public void updateUserPreferences(Long id, UserPreferencesDTO userPreferencesDTO) {
         UserPreferences userPreferences = userPreferencesRepository.findById(id).orElseThrow(NotFoundException::new);
 
         userPreferences.setUserId(userPreferencesDTO.getUserId() != null ? userPreferencesDTO.getUserId() : userPreferences.getUserId());
@@ -50,7 +50,7 @@ public class UserPreferenceServiceImpl implements UserPreferencesService{
     }
 
     @Override
-    public void deleteUserPreference(Long id) {
+    public void deleteUserPreferences(Long id) {
         userPreferencesRepository.delete(userPreferencesRepository.findById(id).orElseThrow(NotFoundException::new));
     }
 }

@@ -11,9 +11,9 @@ public interface UserPreferencesService {
 
     UserPreferenceResponse findUserPreferencesById(Long id);
 
-    UserPreferenceResponse createUserPreference(UserPreferencesDTO userPreferencesDTO);
+    UserPreferenceResponse createUserPreferences(UserPreferencesDTO userPreferencesDTO);
 
-    void updateUserPreference(Long id, UserPreferencesDTO userPreferencesDTO);
+    void updateUserPreferences(Long id, UserPreferencesDTO userPreferencesDTO);
 
-    void deleteUserPreference(Long id);
+    void deleteUserPreferences(Long id);
 }
