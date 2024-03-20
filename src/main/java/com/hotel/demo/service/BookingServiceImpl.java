@@ -1,33 +1,37 @@
-package com.hotel.demo.services;
+package com.hotel.demo.service;
 
 import com.hotel.demo.exceptions.NotFoundException;
-import com.hotel.demo.models.Booking;
-import com.hotel.demo.models.DTO.BookingDTO;
-import com.hotel.demo.models.DTO.BookingResponse;
-import com.hotel.demo.models.mappers.BookingMapper;
+import com.hotel.demo.model.Booking;
+import com.hotel.demo.model.DTO.BookingDTO;
+import com.hotel.demo.model.DTO.BookingResponse;
+import com.hotel.demo.model.mappers.BookingMapper;
 import com.hotel.demo.persistence.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Book;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class BookingServiceImpl implements BookingService{
 
-    @Autowired
     BookingRepository bookingRepository;
+    public BookingServiceImpl(BookingRepository bookingRepository) {
+        this.bookingRepository = bookingRepository;
+    }
+
+
 
     BookingMapper bookingMapper = BookingMapper.INSTANCE;
 
     @Override
-    public List<BookingResponse> findAllBookings() {
+    public List<BookingResponse> findAll() {
         return bookingRepository.findAll().stream().map(booking -> bookingMapper.bookingToBookingResponse(booking)).collect(Collectors.toList());
     }
 
     @Override
-    public BookingResponse findBookingById(Long id) {
+    public BookingResponse findById(Long id) {
         return bookingMapper.bookingToBookingResponse(bookingRepository.findById(id).orElseThrow(NotFoundException::new));
     }
 
@@ -47,6 +51,8 @@ public class BookingServiceImpl implements BookingService{
         booking.setPrice(bookingDTO.getPrice() != null ? bookingDTO.getPrice() : booking.getPrice());
         booking.setEntryDate(bookingDTO.getEntryDate() != null ? bookingDTO.getEntryDate() : booking.getEntryDate());
         booking.setDepartureDate(bookingDTO.getDepartureDate() != null ? bookingDTO.getDepartureDate() : booking.getDepartureDate());
+
+        bookingRepository.save(booking);
     }
 
     @Override
