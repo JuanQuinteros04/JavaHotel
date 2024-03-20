@@ -1,8 +1,8 @@
-package com.hotel.demo.models.mappers;
+package com.hotel.demo.model.mappers;
 
-import com.hotel.demo.models.Booking;
-import com.hotel.demo.models.DTO.BookingDTO;
-import com.hotel.demo.models.DTO.BookingResponse;
+import com.hotel.demo.model.Booking;
+import com.hotel.demo.model.DTO.BookingDTO;
+import com.hotel.demo.model.DTO.BookingResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

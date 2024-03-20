@@ -1,11 +1,8 @@
-package com.hotel.demo.controllers;
+package com.hotel.demo.controller;
 
-import com.hotel.demo.models.DTO.BookingDTO;
-import com.hotel.demo.models.DTO.BookingResponse;
-import com.hotel.demo.models.DTO.RoomDTO;
-import com.hotel.demo.models.DTO.RoomResponse;
-import com.hotel.demo.services.BookingService;
-import com.hotel.demo.services.RoomService;
+import com.hotel.demo.model.DTO.BookingDTO;
+import com.hotel.demo.model.DTO.BookingResponse;
+import com.hotel.demo.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,18 +15,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/bookings")
 public class BookingController {
-
     @Autowired
     BookingService bookingService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<BookingResponse>> findAllBookings(){
-        return ResponseEntity.ok(bookingService.findAllBookings());
+    public ResponseEntity<List<BookingResponse>> findAll(){
+        return ResponseEntity.ok(bookingService.findAll());
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<BookingResponse>findBookingById(@PathVariable("id")Long id){
-        return ResponseEntity.ok(bookingService.findBookingById(id));
+    public ResponseEntity<BookingResponse>findById(@PathVariable("id")Long id){
+        return ResponseEntity.ok(bookingService.findById(id));
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)

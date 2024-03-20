@@ -1,14 +1,18 @@
-package com.hotel.demo.models;
+package com.hotel.demo.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Entity
-@Data
+import java.time.LocalDate;
+
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Table(name = "bookings")
+@EqualsAndHashCode
+@Entity
 public class Booking {
 
     @Id
@@ -22,11 +26,13 @@ public class Booking {
     private Long numberPeople;
 
     @Column(name = "entry_date")
-    private Long entryDate;
+    private LocalDate entryDate;
 
     @Column(name = "departure_date")
-    private Long departureDate;
+    private LocalDate departureDate;
 
     @Column(name = "price")
-    private Long price;
+    private Double price;
+
+
 }
