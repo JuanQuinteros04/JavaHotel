@@ -1,7 +1,7 @@
-package com.hotel.demo.services;
+package com.hotel.demo.service;
 
-import com.hotel.demo.models.DTO.UserPreferenceResponse;
-import com.hotel.demo.models.DTO.UserPreferencesDTO;
+import com.hotel.demo.model.DTO.UserPreferenceResponse;
+import com.hotel.demo.model.DTO.UserPreferencesDTO;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.hotel.demo.controllers;
+package com.hotel.demo.controller;
 
-import com.hotel.demo.models.DTO.UserPreferenceResponse;
-import com.hotel.demo.models.DTO.UserPreferencesDTO;
-import com.hotel.demo.services.UserPreferencesService;
+import com.hotel.demo.model.DTO.UserPreferenceResponse;
+import com.hotel.demo.model.DTO.UserPreferencesDTO;
+import com.hotel.demo.service.UserPreferencesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

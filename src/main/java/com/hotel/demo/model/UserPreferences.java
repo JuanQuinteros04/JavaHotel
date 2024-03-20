@@ -1,14 +1,16 @@
-package com.hotel.demo.models;
+package com.hotel.demo.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@Builder
+@Table(name = "user_preferences")
+@EqualsAndHashCode
+@Entity
 public class UserPreferences {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

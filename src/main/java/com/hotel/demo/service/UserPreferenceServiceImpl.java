@@ -1,10 +1,10 @@
-package com.hotel.demo.services;
+package com.hotel.demo.service;
 
 import com.hotel.demo.exceptions.NotFoundException;
-import com.hotel.demo.models.DTO.UserPreferenceResponse;
-import com.hotel.demo.models.DTO.UserPreferencesDTO;
-import com.hotel.demo.models.UserPreferences;
-import com.hotel.demo.models.mappers.UserPreferencesMapper;
+import com.hotel.demo.model.DTO.UserPreferenceResponse;
+import com.hotel.demo.model.DTO.UserPreferencesDTO;
+import com.hotel.demo.model.UserPreferences;
+import com.hotel.demo.model.mappers.UserPreferencesMapper;
 import com.hotel.demo.persistence.UserPreferencesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

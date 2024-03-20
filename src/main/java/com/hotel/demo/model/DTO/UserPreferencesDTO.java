@@ -1,12 +1,14 @@
-package com.hotel.demo.models.DTO;
+package com.hotel.demo.model.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+@Getter
+@Setter
+@EqualsAndHashCode
 public class UserPreferencesDTO {
 
     private Long userId;
