@@ -1,7 +1,7 @@
-package com.hotel.demo.services;
+package com.hotel.demo.service;
 
-import com.hotel.demo.models.DTO.RoomDTO;
-import com.hotel.demo.models.DTO.RoomResponse;
+import com.hotel.demo.model.DTO.RoomDTO;
+import com.hotel.demo.model.DTO.RoomResponse;
 
 import java.util.List;
 

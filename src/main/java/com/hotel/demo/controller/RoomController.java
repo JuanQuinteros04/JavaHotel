@@ -1,9 +1,9 @@
-package com.hotel.demo.controllers;
+package com.hotel.demo.controller;
 
 
-import com.hotel.demo.models.DTO.RoomDTO;
-import com.hotel.demo.models.DTO.RoomResponse;
-import com.hotel.demo.services.RoomService;
+import com.hotel.demo.model.DTO.RoomDTO;
+import com.hotel.demo.model.DTO.RoomResponse;
+import com.hotel.demo.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

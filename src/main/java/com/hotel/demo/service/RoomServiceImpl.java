@@ -1,10 +1,10 @@
-package com.hotel.demo.services;
+package com.hotel.demo.service;
 
 import com.hotel.demo.exceptions.NotFoundException;
-import com.hotel.demo.models.DTO.RoomDTO;
-import com.hotel.demo.models.DTO.RoomResponse;
-import com.hotel.demo.models.Room;
-import com.hotel.demo.models.mappers.RoomMapper;
+import com.hotel.demo.model.DTO.RoomDTO;
+import com.hotel.demo.model.DTO.RoomResponse;
+import com.hotel.demo.model.Room;
+import com.hotel.demo.model.mappers.RoomMapper;
 import com.hotel.demo.persistence.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
