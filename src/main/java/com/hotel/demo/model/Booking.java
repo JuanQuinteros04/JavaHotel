@@ -34,7 +34,7 @@ public class Booking {
     @Column(name = "price")
     private Double price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id")
     private Client client;
 

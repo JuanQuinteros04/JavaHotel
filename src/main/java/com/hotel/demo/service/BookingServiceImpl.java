@@ -2,10 +2,14 @@ package com.hotel.demo.service;
 
 import com.hotel.demo.exceptions.NotFoundException;
 import com.hotel.demo.model.Booking;
+import com.hotel.demo.model.Client;
+import com.hotel.demo.model.ClientPreferences;
 import com.hotel.demo.model.DTO.BookingDTO;
 import com.hotel.demo.model.DTO.BookingResponse;
 import com.hotel.demo.model.mappers.BookingMapper;
+import com.hotel.demo.model.mappers.ClientPreferencesMapper;
 import com.hotel.demo.persistence.BookingRepository;
+import com.hotel.demo.persistence.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,14 +20,22 @@ import java.util.stream.Collectors;
 @Service
 public class BookingServiceImpl implements BookingService{
 
+    @Autowired
     BookingRepository bookingRepository;
-    public BookingServiceImpl(BookingRepository bookingRepository) {
-        this.bookingRepository = bookingRepository;
-    }
 
 
+    @Autowired
+    ClientPreferencesService clientPreferencesService;
+
+    @Autowired
+    ClientRepository clientRepository;
+
+    ClientPreferencesMapper clientPreferencesMapper = ClientPreferencesMapper.INSTANCE;
 
     BookingMapper bookingMapper = BookingMapper.INSTANCE;
+
+
+
 
     @Override
     public List<BookingResponse> findAll() {
@@ -37,9 +49,31 @@ public class BookingServiceImpl implements BookingService{
 
     @Override
     public BookingResponse createBooking(BookingDTO bookingDTO) {
+
+        Client client = clientRepository.findById(bookingDTO.getClientId()).orElseThrow(NotFoundException::new);
+
+//         Eliminar reservas antiguas si es necesario
+        client.getBookings().clear();
+
+
         Booking booking = bookingMapper.bookingDTOToBooking(bookingDTO);
+//        booking.setClient(client);
         bookingRepository.save(booking);
+
+        client.getBookings().add(booking);
+
+        ClientPreferences clientPreferences = clientPreferencesMapper.clientPreferencesResponseToClientPreferences(clientPreferencesService.findById(booking.getClient().getId()));
+
+        updatePreferences(clientPreferences, booking);
+
         return bookingMapper.bookingToBookingResponse(booking);
+    }
+
+    private void updatePreferences(ClientPreferences clientPreferences, Booking booking){
+        clientPreferences.setClientId(booking.getClient().getId());
+        clientPreferences.setTypeRoom(booking.getTypeRoom());
+        clientPreferences.setNumberPeople(booking.getNumberPeople());
+        clientPreferences.setPrice(booking.getPrice());
     }
 
     @Override
