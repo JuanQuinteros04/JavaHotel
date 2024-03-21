@@ -34,5 +34,8 @@ public class Booking {
     @Column(name = "price")
     private Double price;
 
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 
 }

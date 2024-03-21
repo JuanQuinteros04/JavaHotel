@@ -23,4 +23,5 @@ public class BookingDTO {
 
     private Double price;
 
+    private Long clientId;
 }
