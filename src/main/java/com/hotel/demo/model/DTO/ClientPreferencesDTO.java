@@ -11,12 +11,12 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode
 public class ClientPreferencesDTO {
 
-    private Long userId;
+    private Long clientId;
 
     private String typeRoom;
 
     private Long numberPeople;
 
-    private Long price;
+    private Double price;
 
 }

@@ -41,7 +41,7 @@ public class ClientPreferenceServiceImpl implements ClientPreferencesService {
     public void updateClientPreferences(Long id, ClientPreferencesDTO clientPreferencesDTO) {
         ClientPreferences clientPreferences = clientPreferencesRepository.findById(id).orElseThrow(NotFoundException::new);
 
-        clientPreferences.setUserId(clientPreferencesDTO.getUserId() != null ? clientPreferencesDTO.getUserId() : clientPreferences.getUserId());
+        clientPreferences.setClientId(clientPreferencesDTO.getClientId() != null ? clientPreferencesDTO.getClientId() : clientPreferences.getClientId());
         clientPreferences.setTypeRoom(clientPreferencesDTO.getTypeRoom() != null ? clientPreferencesDTO.getTypeRoom() : clientPreferences.getTypeRoom());
         clientPreferences.setNumberPeople(clientPreferencesDTO.getNumberPeople() != null ? clientPreferencesDTO.getNumberPeople() : clientPreferences.getNumberPeople());
         clientPreferences.setPrice(clientPreferencesDTO.getPrice() != null ? clientPreferencesDTO.getPrice() : clientPreferences.getPrice());

@@ -17,7 +17,7 @@ public class ClientPreferences {
     private Long id;
 
     @Column(name = "user_id")
-    private Long userId;
+    private Long clientId;
 
     @Column(name = "type_room")
     private String typeRoom;
@@ -26,6 +26,6 @@ public class ClientPreferences {
     private Long numberPeople;
 
     @Column(name = "price")
-    private Long price;
+    private Double price;
 
 }

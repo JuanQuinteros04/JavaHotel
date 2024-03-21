@@ -15,5 +15,8 @@ public interface ClientPreferencesMapper {
     @Mapping(target = "id", ignore = true)
     ClientPreferences clientPreferencesDTOToClientPreferences(ClientPreferencesDTO clientPreferences);
 
+    @Mapping(target = "id", ignore = true)
+    ClientPreferences clientPreferencesResponseToClientPreferences(ClientPreferencesResponse clientPreferencesResponse);
+
     ClientPreferencesResponse clientPreferencesToClientPreferencesResponse(ClientPreferences clientPreferences);
 }
