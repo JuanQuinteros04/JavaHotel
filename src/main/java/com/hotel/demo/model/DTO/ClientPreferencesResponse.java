@@ -8,7 +8,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Getter
 @Setter
-public class UserPreferenceResponse extends UserPreferencesDTO{
+public class ClientPreferencesResponse extends ClientPreferencesDTO{
     private Long id;
 
 }

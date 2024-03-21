@@ -11,7 +11,7 @@ import lombok.*;
 @Table(name = "user_preferences")
 @EqualsAndHashCode
 @Entity
-public class UserPreferences {
+public class ClientPreferences {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

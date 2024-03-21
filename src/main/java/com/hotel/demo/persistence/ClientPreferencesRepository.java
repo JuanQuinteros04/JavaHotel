@@ -1,9 +1,9 @@
 package com.hotel.demo.persistence;
 
-import com.hotel.demo.model.UserPreferences;
+import com.hotel.demo.model.ClientPreferences;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserPreferencesRepository extends JpaRepository<UserPreferences, Long> {
+public interface ClientPreferencesRepository extends JpaRepository<ClientPreferences, Long> {
 }

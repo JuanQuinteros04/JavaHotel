@@ -30,7 +30,7 @@ public class ClientController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ClientResponse>createClient(ClientDTO clientDTO){
+    public ResponseEntity<ClientResponse>createClient(@RequestBody ClientDTO clientDTO){
 
         ClientResponse clientResponse = clientService.createClient(clientDTO);
 

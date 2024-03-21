@@ -9,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class UserPreferencesDTO {
+public class ClientPreferencesDTO {
 
     private Long userId;
 
